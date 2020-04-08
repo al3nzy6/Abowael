@@ -1,0 +1,89 @@
+a:link {  color: #236623; text-decoration: none}
+a:visited {  color: #236623; text-decoration: none}
+a:hover {  color: #333333; text-decoration: underline}
+
+.logo {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 30px; font-weight: bold; color: #a3ba2e; background-color: #88ac86; background-image: url(../banarg5.jpg);}
+.menu
+{  font-family: Arial, Helvetica, sans-serif;
+         font-size: 14px;
+         color: #BFE5F4;
+
+}
+.text {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; color: #fa8506}
+.title {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #0098D3}
+.menu1
+{
+      background-image: url(../top01111.gif);
+      background-color: #EEEEEE;
+
+}
+.footer
+{
+    background-image: url(../top012.gif);
+     background-color: #E5E5E5;
+     font-family:Verdana, Arial, Helvetica, sans-serif;
+     font-size: 10px;
+     color: #236623;
+ }
+.body1
+{
+   
+background-color: #ebdeaa;
+font-family:tahoma, Arial, Helvetica, sans-serif;
+         font-size: 15px;
+         color: #000000;
+scrollbar-base-color:#031503; 
+}
+.toprm
+{
+font-family: Arial, Helvetica, sans-serif;
+         font-size: 14px;
+         color: #031503;
+   
+background-color: #ffffff;
+}
+.toprm1
+{
+font-family: Arial, Helvetica, sans-serif;
+         font-size: 12px;
+         color: #031503;   
+background-color: #ffffff;
+}
+.contact
+{
+font-family: Arial, Helvetica, sans-serif;
+         font-size: 12px;
+         color: #031503; 
+ background-image: (../contactg.gif);  
+background-color: #ffffff;
+}
+.menutg
+{
+font-family: Arial, Helvetica, sans-serif;
+         font-size: 12px;
+         color: #031503;  
+background-image: url(../menutg.gif); 
+background-color: #fdc16d;
+}
+.tr
+{
+    background-image: url(../trp5.gif);
+	background-color: #ffffff;
+font-size: 13px;
+          color: #031503;
+
+}
+.table
+{
+    border: 1px solid ;
+	border-spacing:0 ;
+
+	border-color:  #dad4d4;;
+   
+	background-color: #fff;
+  
+}
+.font_green
+{
+color: #cdeb8b;
+}

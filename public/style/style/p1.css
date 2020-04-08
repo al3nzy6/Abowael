@@ -1,0 +1,103 @@
+a:link {  color: #f5d3ea; text-decoration: none}
+a:visited {  color: #f5d3ea; text-decoration: none}
+a:hover {  color: #333333; text-decoration: none}
+a.designby:link {  color: #710071; text-decoration: none}
+a.designby:visited {  color: #710071; text-decoration: none}
+a.designby:hover {  color: #333333; text-decoration:none}
+a.menu:link {  color: #710071; text-decoration: none}
+a.menu:visited {  color: #710071; text-decoration: none}
+a.menu:hover {  color: #FFFFFF; text-decoration: none}
+a.tr:link {  color: #000000; text-decoration: none}
+a.tr:visited {  color: #f2ebf0; text-decoration: none}
+a.tr:hover {  color: #000000; text-decoration: none}
+.logo {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 30px; font-weight: bold; color: #480048; background-color: #f4e0f1;  background-image: url(../banarp6.jpg);}
+.menu
+{  font-family: Arial, Helvetica, sans-serif;
+         font-size: 15px;
+         color: #BFE5F4;
+
+}
+.text {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #666666}
+.title {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #0098D3}
+.menu1
+{
+      background-color: url(../topp111.gif);
+background-color: #f4e0f1;
+}
+
+.footer
+{
+   background-image: url(../topp2.gif); 
+     font-family:Verdana, Arial, Helvetica, sans-serif;
+     font-size: 10px;
+     color: #999999;
+ }
+.body1
+{
+font-family: Arial, Helvetica, sans-serif;
+         font-size: 14px;
+         color: #590059;   
+background-color: #EEEEEE;
+
+}
+.toprm
+{
+font-family: Arial, Helvetica, sans-serif;
+         font-size: 14px;
+         color: #590059;
+background-image: url(../topp5.gif);  
+background-color: #ffffff;
+}
+.toprm1
+{
+font-family: Arial, Helvetica, sans-serif;
+         font-size: 12px;
+         color: #590059;   
+background-color: #ffffff;
+}
+.menutg
+{
+font-family: Arial, Helvetica, sans-serif;
+         font-size: 14px;
+         color: #590059;  
+background-image: url(../menutp.gif); 
+background-color: #ffffff;
+}
+.contact
+{
+font-family: Arial, Helvetica, sans-serif;
+         font-size: 12px;
+         color: #0b0b36; 
+ background-image: url(../contactp.gif);  
+background-color: #ffffff;
+}
+
+.table
+{
+    border-width: 1px;
+	border-spacing:6 ;
+	border-style: outset;
+	border-color:  #f887d1;;
+	border-collapse: separate;
+	background-color: #fceef7;
+  
+}
+.tr
+{
+   background-image: url(../trp2.gif);
+	background-color: #f887d1;
+font-size: 15px;
+          color: #f2ebf0;
+
+}
+
+.tafaseel
+{
+   
+	
+    height: 30px; /* height of the replacement image */
+    background-image: url(../tafaseelp.gif);
+    background-repeat: no-repeat;
+
+
+}
