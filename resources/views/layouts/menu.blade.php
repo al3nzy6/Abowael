@@ -1,4 +1,4 @@
-<li class="{{ Request::is('countries*') ? 'active' : '' }}">
+{{-- <li class="{{ Request::is('countries*') ? 'active' : '' }}">
     <a href="{{ route('countries.index') }}"><i class="fa fa-edit"></i><span>Countries</span></a>
 </li>
 
@@ -44,12 +44,12 @@
 
 <li class="{{ Request::is('raClasses*') ? 'active' : '' }}">
     <a href="{{ route('raClasses.index') }}"><i class="fa fa-edit"></i><span>Ra Classes</span></a>
-</li>
+</li> --}}
 
 <li class="{{ Request::is('raContents*') ? 'active' : '' }}">
     <a href="{{ route('raContents.index') }}"><i class="fa fa-edit"></i><span>Ra Contents</span></a>
 </li>
-
+{{--
 <li class="{{ Request::is('raCounters*') ? 'active' : '' }}">
     <a href="{{ route('raCounters.index') }}"><i class="fa fa-edit"></i><span>Ra Counters</span></a>
 </li>
@@ -109,11 +109,11 @@
 <li class="{{ Request::is('stats*') ? 'active' : '' }}">
     <a href="{{ route('stats.index') }}"><i class="fa fa-edit"></i><span>Stats</span></a>
 </li>
-
+--}}
 <li class="{{ Request::is('users*') ? 'active' : '' }}">
     <a href="{{ route('users.index') }}"><i class="fa fa-edit"></i><span>Users</span></a>
 </li>
-
+{{--
 <li class="{{ Request::is('videos*') ? 'active' : '' }}">
     <a href="{{ route('videos.index') }}"><i class="fa fa-edit"></i><span>Videos</span></a>
 </li>
@@ -121,4 +121,4 @@
 <li class="{{ Request::is('videoClasses*') ? 'active' : '' }}">
     <a href="{{ route('videoClasses.index') }}"><i class="fa fa-edit"></i><span>Video Classes</span></a>
 </li>
-
+ --}}

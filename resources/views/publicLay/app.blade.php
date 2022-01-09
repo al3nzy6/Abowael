@@ -75,7 +75,7 @@
                                 <a href="#"> <span class="fa arrow"></span></a>
                                 <!--<a href="#" class="dropdown-toggle category03" data-toggle="dropdown"><span class="pe-7s-angle-down"></span></a>-->
                                 <ul class="nav nav-second-level">
-                                    
+
                                     <li><a href=".html"></a></li>
                                     <!--<li class="divider"></li>-->
                                 </ul>
@@ -92,9 +92,11 @@
                                 </ul>
                             </li> --}}
                             <li><a href="./contact.html" class="category04">اتصل بنا</a></li>
-                            
+
                             {{-- <li><a href="./logout.php" class="category04">   خروج</a></li> --}}
+                            @guest
                             <li><a href="./login.html" class="category04"> تسجيل  الدخول</a></li>
+                            @endguest
                             <!-- social icon -->
                             <li>
                                 <div class="social">
@@ -142,26 +144,15 @@
                         <div class="col-sm-3 col-md-3">
                             <div class="top_header_menu_wrap">
                                 <ul class="top-header-menu">
-                                    <li><a href="./reg_form.html">تسجيل</a></li>
-                                    <li class="dropdown">
-                                        {{-- <br /> --}}
-                                        {{-- <a href="logout.php"><font style="color: #FF0000; font-weight: bold"> تسجيل الخروج</font></a> --}}
-                                        <form action="login.html" method="post">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">تسجيل الدخول</a>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <div class="login-inner">
-                                                        <input type="text" class="form-control" id="name_email" name="username" placeholder="اسم المستخدم ">
-                                                        <hr>
-                                                        <input type="password" class="form-control" id="pass" name="password" placeholder="كلمة المرور">
-                                                        <label class="checkbox-inline"><input type="checkbox" value="">تذكرنى</label>
-                                                        <button type="submit" name="submit" class="btn btn-lr btn-active">الدخول </button>
-                                                        <!--<div class="foeget"><a href="#">نسيت اسم المستخدم / كلمة السر؟</a></div>-->
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </form>
-                                    </li>
+                                    @guest
+                                        <li><a href="{{ route('login') }}">تسجيل الدخول</a></li>
+                                    @endguest
+                                    @auth
+                                    <li><form action="{{ Route('logout') }}" method="post">
+                                        @method('POST')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm" href="{{ Route('logout') }}">تسجيل الخروج</button></form></li>
+                                    @endauth
                                     <li><a href="./contact.html">اتصل بنا</a></li>
                                 </ul>
                             </div>
@@ -175,7 +166,7 @@
                                     @foreach ($randomBlogs as $randomBlog)
                                         <li><a href="{{ route('showBlog', [$randomBlog->id]) }}">{{ $randomBlog->title }}</a></li>
                                     @endforeach
-                                    
+
                                 </ul>
                                 <div class="next-prev-inner">
                                     <a href="#" id="prev-button"><i class='pe-7s-angle-left'></i></a>
@@ -210,7 +201,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-4 col-sm-4">
                             <div class="header-logo">  <!-- logo -->
-                            <a href="index.html">
+                            <a href="{{ Route('index') }}">
                                 <img class="td-retina-data img-responsive"  src="{{ asset('style/images/logo.png') }}" alt="">
                             </a>
                         </div>
@@ -241,40 +232,40 @@
                             <div class="col-lg-12">
 
                                 @yield('content')
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
                 </div> <!-- /.left content inner -->
-                
+
                 <div class="col-md-4 col-sm-4 right-padding" style="padding-top: 0px !Important;"> <!-- left content wrapper -->
                 <form id="search" method="post" action="/searchresult.html" >
                     <div class="input-group search-area"> <!-- search area -->
-                    
+
                     <input type="text"   class="form-control" placeholder="بحث المواد هنا ..." name="search">
                     <div class="input-group-btn">
                         <button class="btn btn-search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </div>
-                    
+
                 </div>
             </form>
             <!-- /.search area -->
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
+
             <!-- twitter feed -->
             <h3 class="category-headding ">تويتر تغذية</h3>
             <div class="headding-border"></div>
             <div class="feed-inner">
                 <a class="twitter-timeline" data-lang="ar" data-height="700" href="https://twitter.com/RamadanAlanazi">Tweets by Ramadan Alanazi</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>                    </div>  <!-- /.twitter feed -->
-                
+
                 <div class="tab-inner">
                     <ul class="tabs">
                         <li><a href="#">الأكثر مشاهدة</a></li>
@@ -283,7 +274,7 @@
                         <div class="tab_content">
                             <div class="tab-item-inner">
                                 @foreach ($moreViewrs as $moreViewr)
-                                
+
                                 <div class="box-item wow fadeIn" data-wow-duration="1s">
                                     <div class="img-thumb">
                                         <a href="" rel="bookmark">
@@ -298,7 +289,7 @@
                                                 @else
                                                 {{ asset($moreViewr->picture) }}
                                                 @endif
-                                                
+
                                             " alt="" height="80" width="90"></a>
                                         </div>
                                         <div class="item-details">
@@ -315,41 +306,41 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    
+
+
                                 </div>
                                 {{-- expr --}}
                                 @endforeach
-                                
-                                
-                                
-                                
-                                
+
+
+
+
+
                                 </div> <!-- / tab item -->
                                 <div class="tab-item-inner">
-                                    
+
                                     <div class="box-item ">
-                                        
-                                        
-                                        
-                                        
+
+
+
+
                                         <div class="img-thumb">
                                             <a href="" rel="bookmark">
                                             <img class="entry-thumb" src="/Abowael-1/pic/" alt="" height="80" width="90"></a>
                                         </div>
-                                        
-                                        
-                                        
+
+
+
                                         <div class="img-thumb">
                                             <a href="" rel="bookmark">
                                             <img class="entry-thumb" src="/Abowael-1/images/abowael-most.jpg" alt="" height="80" width="90"></a>
                                         </div>
-                                        
-                                        
-                                        
-                                        
+
+
+
+
                                         <div class="item-details">
-                                            
+
                                             <h6 class="sub-category-title bg-color-">
                                             <a href="#"></a>
                                             </h6>
@@ -364,48 +355,48 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
+
+
+
+
+
+
                                     </div> <!-- / tab item -->
                                     </div> <!-- / tab_content -->
                                     </div> <!-- / tab -->
-                                    
-                                    
-                                    
+
+
+
                                     <!--القاذمة البريدية-->
-                                    
+
                                     <h3 class="category-headding "> القائمة البريدية</h3>
                                     <div class="headding-border"></div>
                                     <div class="feed-inner">
                                         <p class="tr padtop"> :بريدك الالكتروني</p>
                                         <div class="top">
                                         </div>  </div>
-                                        
+
                                         <!--القائمة البريدية-->
-                                        
-                                        
-                                        
+
+
+
                                         </div> <!-- side content end -->
                                         </div> <!-- row end -->
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
+
+
+
+
+
+
+
+
+
+
                                         </div> <!-- container end -->
-                                        
+
                                         <footer>
                                             <div class="container">
-                                                
+
                                                 <div class="row">
                                                     <div class="col-sm-3">
                                                         <div class="footer-box footer-logo-address"> <!-- address  -->
@@ -419,14 +410,14 @@
                                                             <h3 class="category-headding">المقالات</h3>
                                                             <div class="headding-border bg-color-4"></div>
                                                             <ul>
-                                                                
+
                                                                 @foreach ($subpages as $subpage)
                                                                 @if ($subpage->pages_id == 15)
                                                                 <li><a href="{{ Route('showBlogSection', [$subpage->id, Str::arabic_slug($subpage->class_n)]) }}">{{$subpage->class_n}}</a></li>
                                                                 @endif
-                                                                
+
                                                                 @endforeach
-                                                                
+
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -439,15 +430,15 @@
                                                                 @if ($subpage->pages_id == 17)
                                                                 <li><a href="{{ Route('showBlogSection', [$subpage->id, Str::arabic_slug($subpage->class_n)]) }}">{{$subpage->class_n}}</a></li>
                                                                 @endif
-                                                                
+
                                                                 @endforeach
                                                             </ul>
                                                         </div>
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
+
+
+
+
+
                                                         <div class="footer-box">
                                                             <h3 class="category-headding">ابووائل في  الاعلام</h3>
                                                             <div class="headding-border bg-color-5"></div>
@@ -456,7 +447,7 @@
                                                                 @if ($subpage->pages_id == 19)
                                                                 <li><a href="{{ Route('showBlogSection', [$subpage->id, Str::arabic_slug($subpage->class_n)]) }}">{{$subpage->class_n}}</a></li>
                                                                 @endif
-                                                                
+
                                                                 @endforeach
                                                             </ul>
                                                         </div>
@@ -470,7 +461,7 @@
                                                                 @if ($subpage->pages_id == 16)
                                                                 <li><a href="{{ Route('showBlogSection', [$subpage->id, Str::arabic_slug($subpage->class_n)]) }}">{{$subpage->class_n}}</a></li>
                                                                 @endif
-                                                                
+
                                                                 @endforeach
                                                             </ul>
                                                         </div>

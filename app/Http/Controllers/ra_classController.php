@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use App\Models\ra_class;
 use App\Models\ra_content;
+use Auth;
 use Flash;
 use Response;
 
@@ -158,7 +159,11 @@ class ra_classController extends AppBaseController
 
     public function showBlogSection(ra_class $ra_class)
     {
-        $blogs = ra_content::where('class_id', $ra_class->id)->orderBy('id', 'desc')->get();
+        if (Auth::check() && Auth::user()->is_admin === 1 ) {
+            $blogs = ra_content::where('class_id', $ra_class->id)->orderBy('id', 'desc')->get();
+        }else{
+            $blogs = ra_content::where('class_id', $ra_class->id)->where('publish', 1)->orderBy('id', 'desc')->get();
+        }
         return view('pub.content.section')
         ->with('section', $ra_class)
         ->with('blogs', $blogs);

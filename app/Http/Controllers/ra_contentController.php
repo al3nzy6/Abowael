@@ -8,8 +8,10 @@ use App\Repositories\ra_contentRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use App\Models\ra_content;
+use Auth;
 use Flash;
 use Response;
+use Str;
 
 class ra_contentController extends AppBaseController
 {
@@ -171,7 +173,20 @@ class ra_contentController extends AppBaseController
 
     public function showOne(ra_content $ra_content)
     {
+        if ($ra_content->publish === 0) {
+            if(Auth::check() && Auth::user()->is_admin){
+                return view('pub.content.blog')
+                ->with('blog', $ra_content);
+            }
+            return redirect()->route('index');
+        }
         return view('pub.content.blog')
         ->with('blog', $ra_content);
+    }
+    public function StopPublish($blog_id)
+    {
+        $blog = ra_content::findOrFail($blog_id);
+        $blog->update(['publish'=>!$blog->publish]);
+        return redirect()->back();
     }
 }

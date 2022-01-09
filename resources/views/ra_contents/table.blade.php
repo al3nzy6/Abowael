@@ -8,12 +8,6 @@
         <th>Content</th>
         <th>Picture</th>
         <th>Created</th>
-        <th>Modified</th>
-        <th>View</th>
-        <th>Reply</th>
-        <th>Writer</th>
-        <th>Sent</th>
-        <th>Userid</th>
         <th>Publish</th>
                 <th colspan="3">Action</th>
             </tr>
@@ -24,15 +18,9 @@
                 <td>{{ $raContent->title }}</td>
             <td>{{ $raContent->pages_id }}</td>
             <td>{{ $raContent->class_id }}</td>
-            <td>{{ $raContent->content }}</td>
-            <td>{{ $raContent->picture }}</td>
+            <td>{{ \Str::limit(strip_tags($raContent->content), 400, '...') }}</td>
+            <td><img src="{{ asset($raContent->picture) }}" width="50" class="img-fluid" ></td>
             <td>{{ $raContent->created }}</td>
-            <td>{{ $raContent->modified }}</td>
-            <td>{{ $raContent->view }}</td>
-            <td>{{ $raContent->reply }}</td>
-            <td>{{ $raContent->writer }}</td>
-            <td>{{ $raContent->sent }}</td>
-            <td>{{ $raContent->userid }}</td>
             <td>{{ $raContent->publish }}</td>
                 <td>
                     {!! Form::open(['route' => ['raContents.destroy', $raContent->id], 'method' => 'delete']) !!}

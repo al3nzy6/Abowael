@@ -8,6 +8,7 @@ use App\Repositories\countriesRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
+use Laracasts\Flash\Flash as FlashFlash;
 use Response;
 
 class countriesController extends AppBaseController

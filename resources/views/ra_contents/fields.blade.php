@@ -19,7 +19,7 @@
 <!-- Content Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('content', 'Content:') !!}
-    {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
+    {!! Form::textarea('content', null, ['class' => 'form-control', 'id'=>'default']) !!}
 </div>
 
 <!-- Picture Field -->
@@ -28,35 +28,7 @@
     {!! Form::text('picture', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Created Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('created', 'Created:') !!}
-    {!! Form::text('created', null, ['class' => 'form-control']) !!}
-</div>
 
-<!-- Modified Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('modified', 'Modified:') !!}
-    {!! Form::text('modified', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- View Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('view', 'View:') !!}
-    {!! Form::number('view', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Reply Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('reply', 'Reply:') !!}
-    {!! Form::number('reply', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Writer Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('writer', 'Writer:') !!}
-    {!! Form::text('writer', null, ['class' => 'form-control']) !!}
-</div>
 
 <!-- Sent Field -->
 <div class="form-group col-sm-6">
@@ -73,7 +45,8 @@
 <!-- Publish Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('publish', 'Publish:') !!}
-    {!! Form::number('publish', null, ['class' => 'form-control']) !!}
+    {!! Form::select('publish', [0=>'not Publish', 1=>'publish'], old('publish', isset($raContent->publish) ? $raContent->publish : ''), ['class' => 'form-control']) !!}
+    {{-- {!! Form::number('publish', null, ['class' => 'form-control']) !!} --}}
 </div>
 
 <!-- Submit Field -->
@@ -81,3 +54,15 @@
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
     <a href="{{ route('raContents.index') }}" class="btn btn-default">Cancel</a>
 </div>
+
+
+@push('scripts')
+<script>
+    tinymce.init({
+    selector: 'textarea#default', // change this value according to your HTML
+    plugin: 'a_tinymce_plugin',
+    a_plugin_option: true,
+    a_configuration_option: 400
+    });
+</script>
+@endpush

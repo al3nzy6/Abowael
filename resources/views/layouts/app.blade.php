@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
 
     @yield('css')
+    <x-head.tinymce-config />
 </head>
 
 <body class="skin-blue sidebar-mini">
@@ -162,5 +163,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
 
     @stack('scripts')
+    {{-- <x-forms.tinymce-editor /> --}}
 </body>
 </html>
