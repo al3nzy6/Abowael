@@ -152,7 +152,11 @@
                                         @method('POST')
                                         @csrf
                                         <button type="submit" class="btn btn-danger btn-sm" href="{{ Route('logout') }}">تسجيل الخروج</button></form></li>
+                                        @if (auth()->user()->is_admin)
+                                            <li><a href="{{ url('admin') }}">الوحة التحكم</a></li>
+                                        @endif
                                     @endauth
+
                                     <li><a href="./contact.html">اتصل بنا</a></li>
                                 </ul>
                             </div>
