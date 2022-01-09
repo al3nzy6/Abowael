@@ -91,12 +91,25 @@
                                     <!--<li class="divider"></li>-->
                                 </ul>
                             </li> --}}
-                            <li><a href="./contact.html" class="category04">اتصل بنا</a></li>
-
                             {{-- <li><a href="./logout.php" class="category04">   خروج</a></li> --}}
                             @guest
-                            <li><a href="./login.html" class="category04"> تسجيل  الدخول</a></li>
+                            <li><a href="{{ Route('login') }}" class="category04"> تسجيل  الدخول</a></li>
                             @endguest
+                            @guest
+                            <li><a class="category04" href="{{ route('login') }}">تسجيل الدخول</a></li>
+                            @endguest
+                            @auth
+                            <li>
+                                <form action="{{ Route('logout') }}" method="post">
+                                    @method('POST')
+                                    @csrf
+                                    <button type="submit" class="category04 btn btn-danger btn-sm" href="{{ Route('logout') }}">تسجيل الخروج</button>
+                                </form>
+                            </li>
+                            @if (auth()->user()->is_admin)
+                            <li><a class="category04" href="{{ url('admin') }}">الوحة التحكم</a></li>
+                            @endif
+                            @endauth
                             <!-- social icon -->
                             <li>
                                 <div class="social">
