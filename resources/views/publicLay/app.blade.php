@@ -71,15 +71,15 @@
                                 <!-- /input-group -->
                             </li>
                             <li><a href="{{ url('/') }}">الصفحة الرئيسية</a></li>
-                            <li>
-                                <a href="#"> <span class="fa arrow"></span></a>
+                            {{-- <li> --}}
+                                {{-- <a href="#"> <span class="fa arrow"></span></a> --}}
                                 <!--<a href="#" class="dropdown-toggle category03" data-toggle="dropdown"><span class="pe-7s-angle-down"></span></a>-->
-                                <ul class="nav nav-second-level">
+                                {{-- <ul class="nav nav-second-level">
 
                                     <li><a href=".html"></a></li>
                                     <!--<li class="divider"></li>-->
-                                </ul>
-                            </li>
+                                </ul> --}}
+                            {{-- </li> --}}
                             {{-- <li >
                                 <a href="#" > التحكم  <span class="pe-7s-angle-down"></span></a>
                                 <ul class="nav nav-second-level">
@@ -92,9 +92,6 @@
                                 </ul>
                             </li> --}}
                             {{-- <li><a href="./logout.php" class="category04">   خروج</a></li> --}}
-                            @guest
-                            <li><a href="{{ Route('login') }}" class="category04"> تسجيل  الدخول</a></li>
-                            @endguest
                             @guest
                             <li><a class="category04" href="{{ route('login') }}">تسجيل الدخول</a></li>
                             @endguest
