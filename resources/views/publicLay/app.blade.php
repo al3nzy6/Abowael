@@ -115,7 +115,7 @@
                                 <ul class="dropdown-menu bg-blue menu-slide">
                                     @foreach ($subpages as $subpage)
                                     @if ($subpage->pages_id == $page->id)
-                                    <li><a href="{{ Route('showBlogSection', [$subpage->id, Str::arabic_slug($subpage->class_n)]) }}">{{
+                                    <li><a style="color: black;" href="{{ Route('showBlogSection', [$subpage->id, Str::arabic_slug($subpage->class_n)]) }}">{{
                                             $subpage->class_n }}</a></li>
                                     @endif
                                     @endforeach
