@@ -108,6 +108,21 @@
                             @endif
                             @endauth
                             <!-- social icon -->
+                            @foreach ($pages as $page)
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle category03" data-toggle="dropdown"> {{ $page->pages }} <span
+                                        class="pe-7s-angle-down"></span></a>
+                                <ul class="dropdown-menu menu-slide">
+                                    @foreach ($subpages as $subpage)
+                                    @if ($subpage->pages_id == $page->id)
+                                    <li><a href="{{ Route('showBlogSection', [$subpage->id, Str::arabic_slug($subpage->class_n)]) }}">{{
+                                            $subpage->class_n }}</a></li>
+                                    @endif
+                                    @endforeach
+                                    <!--<li class="divider"></li>-->
+                                </ul>
+                            </li>
+                            @endforeach
                             <li>
                                 <div class="social">
                                     <ul>
@@ -166,21 +181,6 @@
                                             <li><a href="{{ url('admin') }}">الوحة التحكم</a></li>
                                         @endif
                                     @endauth
-                                    @foreach ($pages as $page)
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle category03" data-toggle="dropdown"> {{ $page->pages }} <span
-                                                class="pe-7s-angle-down"></span></a>
-                                        <ul class="dropdown-menu menu-slide">
-                                            @foreach ($subpages as $subpage)
-                                            @if ($subpage->pages_id == $page->id)
-                                            <li><a href="{{ Route('showBlogSection', [$subpage->id, Str::arabic_slug($subpage->class_n)]) }}">{{
-                                                    $subpage->class_n }}</a></li>
-                                            @endif
-                                            @endforeach
-                                            <!--<li class="divider"></li>-->
-                                        </ul>
-                                    </li>
-                                    @endforeach
                                     <li><a href="./contact.html">اتصل بنا</a></li>
                                 </ul>
                             </div>
