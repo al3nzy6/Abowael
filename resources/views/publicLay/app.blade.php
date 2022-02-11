@@ -112,7 +112,7 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle category03" data-toggle="dropdown"> {{ $page->pages }} <span
                                         class="pe-7s-angle-down"></span></a>
-                                <ul class="dropdown-menu menu-slide">
+                                <ul class="dropdown-menu bg-blue menu-slide">
                                     @foreach ($subpages as $subpage)
                                     @if ($subpage->pages_id == $page->id)
                                     <li><a href="{{ Route('showBlogSection', [$subpage->id, Str::arabic_slug($subpage->class_n)]) }}">{{
